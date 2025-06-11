@@ -6,6 +6,10 @@
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "./node_modules/*",
+      "./env.d.ts"
+    ],
   }
 }
