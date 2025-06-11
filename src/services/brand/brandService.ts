@@ -1,4 +1,4 @@
-import { Brand } from '../../generated/prisma';
+import { BrandModel, BrandModelDTO } from '../../models/brandModel';
 import { BrandRepository } from '../../repository/brand/brandRepository';
 
 export class BrandService {
@@ -8,23 +8,23 @@ export class BrandService {
 		this.repository = repo;
 	}
 
-	async getBrands(): Promise<Brand[] | []> {
+	async getBrands(): Promise<BrandModel[] | []> {
 		return this.repository.findAll();
 	}
 
-	async getBrandById(id: number): Promise<Brand | null> {
+	async getBrandById(id: number): Promise<BrandModel | null> {
 		return this.repository.findById(id);
 	}
 
-	async createBrand(data: Omit<Brand, 'id'>): Promise<Brand> {
+	async createBrand(data: BrandModelDTO): Promise<BrandModel> {
 		return this.repository.create(data);
 	}
 
-	async patchBrandById(id: number, data: Omit<Brand, 'id'>): Promise<Brand> {
+	async patchBrandById(id: number, data: BrandModelDTO): Promise<BrandModel> {
 		return this.repository.patchById(id, data);
 	}
 
-	async deleteBrandById(id: number): Promise<Brand | null> {
+	async deleteBrandById(id: number): Promise<BrandModel | null> {
 		return this.repository.deleteById(id);
 	}
 }
