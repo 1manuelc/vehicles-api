@@ -9,14 +9,35 @@ datasource db {
 }
 
 model Brand {
-  id      Int       @id @default(autoincrement())
-  name    String    @unique
-  Vehicle Vehicle[]
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  country     String // País de origem da marca
+  foundedAt   Int // Ano de fundação (ex: 1937)
+  logoUrl     String? // URL da imagem da marca (opcional)
+  description String? // Breve descrição ou histórico
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  Vehicle     Vehicle[]
+}
+
+enum FuelType {
+  GASOLINE
+  DIESEL
+  ELECTRIC
+  HYBRID
+  FLEX
 }
 
 model Vehicle {
-  id       Int    @id @default(autoincrement())
-  model    String @unique
-  brand    Brand  @relation(fields: [brand_id], references: [id])
-  brand_id Int
+  id        Int      @id @default(autoincrement())
+  model     String
+  year      Int
+  color     String
+  price     Float
+  mileage   Int // Quilometragem em km
+  fuelType  FuelType // Tipo de combustível (Gasolina, Diesel, Elétrico, etc.)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  brand     Brand    @relation(fields: [brand_id], references: [id])
+  brand_id  Int
 }
