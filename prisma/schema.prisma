@@ -30,7 +30,7 @@ enum FuelType {
 
 model Vehicle {
   id        Int      @id @default(autoincrement())
-  model     String
+  model     String   @unique
   year      Int
   color     String
   price     Float
