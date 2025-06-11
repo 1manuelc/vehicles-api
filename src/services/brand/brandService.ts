@@ -27,4 +27,9 @@ export class BrandService {
 	async deleteBrandById(id: number): Promise<BrandModel | null> {
 		return this.repository.deleteById(id);
 	}
+
+	async getVehiclesByBrandId(id: number) {
+	return this.repository.findVehiclesByBrandId(id);
+}
+
 }

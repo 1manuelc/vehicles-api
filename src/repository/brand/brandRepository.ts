@@ -40,4 +40,11 @@ export class BrandRepository {
 			where: { id },
 		});
 	}
+
+	async findVehiclesByBrandId(brandId: number) {
+		return await this.prisma.vehicle.findMany({
+			where: { brand_id: brandId },
+			orderBy: { id: 'asc' },
+		});
+	}
 }

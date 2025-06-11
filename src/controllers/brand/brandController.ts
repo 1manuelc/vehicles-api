@@ -122,4 +122,28 @@ export class BrandController {
 			next(err);
 		}
 	}
+
+	async getVehiclesByBrandId(req: Request, res: Response, next: NextFunction) {
+		try {
+			const brandId = Number(req.params.id);
+			const vehicles = await this.service.getVehiclesByBrandId(brandId);
+
+			if (!vehicles || vehicles.length === 0) {
+				throw new ApiError(
+					404,
+					`No vehicles found for brand with id ${brandId}`
+				);
+			}
+
+			return res.status(200).json({
+				success: true,
+				message: `${vehicles.length} vehicle${
+					vehicles.length > 1 ? 's' : ''
+				} found for brand ${brandId}`,
+				data: vehicles,
+			});
+		} catch (err) {
+			next(err);
+		}
+	}
 }

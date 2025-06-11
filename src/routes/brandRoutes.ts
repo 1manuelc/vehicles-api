@@ -25,3 +25,6 @@ brandRouter.patch('/:id', (req, res, next) => {
 brandRouter.delete('/:id', (req, res, next) => {
 	controller.deleteBrandById(req, res, next);
 });
+brandRouter.get('/:id/vehicles', (req, res, next) => {
+	controller.getVehiclesByBrandId(req, res, next);
+});
