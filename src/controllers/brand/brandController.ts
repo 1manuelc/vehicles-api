@@ -78,6 +78,7 @@ export class BrandController {
 			return res.status(200).send({
 				success: true,
 				message: 'brand created successfully',
+				data: brand,
 			});
 		} catch (err) {
 			next(err);
