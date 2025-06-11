@@ -16,13 +16,20 @@ export class BrandController {
 			const { name } = req.query;
 
 			if (name) {
-				brands = brands.filter((brand) => brand.name.includes(String(name)));
+				brands = brands.filter((brand) =>
+					brand.name.toLowerCase().includes(String(name).toLowerCase())
+				);
 			}
 
 			return res.status(200).json({
 				success: true,
-				message: `${brands.length} brands found`,
-				data: brands.sort((a, b) => a.id - b.id), // ordena por id crescente,
+				// formata mensagem com plural ou singular para brands
+				message: `${brands.length} brand${brands.length > 1 ? 's' : ''}${
+					name ? ` with name containing '${name}'` : ''
+				} found`,
+				// formata saída para query param de filtragem aparecer em message
+				data: brands.sort((a, b) => a.id - b.id),
+				// ordena por id crescente,
 			});
 		} catch (err) {
 			next(err);
