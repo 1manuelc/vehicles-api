@@ -1,8 +1,6 @@
 import { PrismaClient } from '../../generated/prisma';
 import { BrandModel, BrandModelDTO } from '../../models/brandModel';
 
-const prisma = new PrismaClient();
-
 export class BrandRepository {
 	private prisma: PrismaClient;
 
