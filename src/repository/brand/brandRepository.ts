@@ -25,11 +25,7 @@ export class BrandRepository {
 			throw new Error(`Brand with model "${data.name}" already exists.`);
 		}
 
-		return await this.prisma.brand.create({
-			data: {
-				name: data.name,
-			},
-		});
+		return await this.prisma.brand.create({ data });
 	}
 
 	async patchById(id: number, data: BrandModelDTO): Promise<BrandModel> {
