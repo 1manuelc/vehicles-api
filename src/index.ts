@@ -1,13 +1,20 @@
-import express from 'express';
+import express, { Router } from 'express';
 import { errorHandler } from './middlewares/errorHandler';
+import { brandRouter } from './routes/brandRoutes';
 
-const app = express();
+export const app = express();
 app.use(express.json());
-app.use(errorHandler);
 
-app.get('/', (req, res) => {
-	res.send('API funcionando!');
+const apiRouter = Router();
+app.use('/api', apiRouter);
+
+apiRouter.use('/brands', brandRouter);
+
+apiRouter.get('/', (_, res) => {
+	res.json('Welcome to VehiclesAPI!');
 });
+
+app.use(errorHandler);
 
 app.listen(3000, () => {
 	console.log('Server running at http://localhost:3000');

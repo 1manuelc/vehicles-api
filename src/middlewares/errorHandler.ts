@@ -12,7 +12,7 @@ export function errorHandler(
 	let details = err.details;
 
 	res.status(statusCode).json({
-		sucess: false,
+		success: false,
 		error: {
 			message,
 			details,
