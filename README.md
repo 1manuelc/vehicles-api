@@ -34,5 +34,5 @@ Uma marca pode ter vários veículos; cada veículo pertence a uma marca.
 
 1. Clone o repositório
 2. Instale as dependências `npm i`
-3. Configure as variáveis de ambiente se baseando em `.env.example`
-4. Migre o banco de dados com: `npx prisma migrate dev` ou `npx prisma db push`
+3. Configure as variáveis de ambiente em um arquivo `.env.local` se baseando em `.env.example`
+4. Migre o banco de dados com: `npx prisma migrate dev`
