@@ -1,0 +1,65 @@
+[
+    {
+        "model": "Ferrari SF90 Stradale",
+        "year": 2023,
+        "color": "Red",
+        "price": 550000,
+        "mileage": 1200,
+        "fuelType": "HYBRID",
+        "brandName": "Ferrari"
+    },
+    {
+        "model": "Mercedes-AMG ONE",
+        "year": 2023,
+        "color": "Silver",
+        "price": 2700000,
+        "mileage": 800,
+        "fuelType": "HYBRID",
+        "brandName": "Mercedes-Benz"
+    },
+    {
+        "model": "McLaren Artura",
+        "year": 2023,
+        "color": "Orange",
+        "price": 240000,
+        "mileage": 1500,
+        "fuelType": "HYBRID",
+        "brandName": "McLaren"
+    },
+    {
+        "model": "RB20 Prototype",
+        "year": 2024,
+        "color": "Matte Blue",
+        "price": 999999,
+        "mileage": 100,
+        "fuelType": "HYBRID",
+        "brandName": "Red Bull Racing"
+    },
+    {
+        "model": "Toyota GR Supra",
+        "year": 2022,
+        "color": "White",
+        "price": 55000,
+        "mileage": 5000,
+        "fuelType": "GASOLINE",
+        "brandName": "Toyota"
+    },
+    {
+        "model": "Ford Mustang Mach-E",
+        "year": 2022,
+        "color": "Blue",
+        "price": 62000,
+        "mileage": 2500,
+        "fuelType": "ELECTRIC",
+        "brandName": "Ford"
+    },
+    {
+        "model": "BMW i8",
+        "year": 2020,
+        "color": "Black",
+        "price": 140000,
+        "mileage": 7000,
+        "fuelType": "HYBRID",
+        "brandName": "BMW"
+    }
+]

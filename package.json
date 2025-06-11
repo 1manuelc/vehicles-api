@@ -7,7 +7,7 @@
     "prisma:studio": "npx prisma studio"
   },
   "prisma": {
-    "seed": "tsx src/prisma/seed.ts"
+    "seed": "tsx src/prisma/seed/seed.ts"
   },
   "keywords": [],
   "author": "",
