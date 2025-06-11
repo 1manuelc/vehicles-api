@@ -36,3 +36,4 @@ Uma marca pode ter vários veículos; cada veículo pertence a uma marca.
 2. Instale as dependências `npm i`
 3. Configure as variáveis de ambiente em um arquivo `.env` se baseando em `.env.example`
 4. Migre o banco de dados com: `npx prisma migrate dev`
+5. Execute com `npm start`
