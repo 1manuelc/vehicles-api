@@ -9,9 +9,15 @@ export class BrandController {
 		this.service = serv;
 	}
 
-	async getAllBrands(_: Request, res: Response, next: NextFunction) {
+	async getAllBrands(req: Request, res: Response, next: NextFunction) {
 		try {
-			const brands = await this.service.getBrands();
+			let brands = await this.service.getBrands();
+
+			const { name } = req.query;
+
+			if (name) {
+				brands = brands.filter((brand) => brand.name.includes(String(name)));
+			}
 
 			return res.status(200).json({
 				success: true,
